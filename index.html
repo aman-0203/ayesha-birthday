@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Ayesha 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #e8829a;
+    --rose-light: #f4b8c8;
+    --rose-deep: #c4566e;
+    --gold: #d4a96a;
+    --gold-light: #f0d5a8;
+    --cream: #fdf6f0;
+    --midnight: #1a0f1e;
+    --plum: #2d1535;
+    --plum-mid: #3d1f4a;
+    --text-light: #f8e8f0;
+    --text-dim: #c9a8b8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cormorant Garamond', serif;
+    background: var(--midnight);
+    color: var(--text-light);
+    overflow-x: hidden;
+  }
+
+  /* ─── LANDING PAGE ─── */
+  #landing {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 30% 20%, #3d1535 0%, #1a0f1e 50%, #0d0810 100%);
+  }
+
+  #landing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 80% 80%, rgba(232, 130, 154, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 20% 70%, rgba(212, 169, 106, 0.1) 0%, transparent 40%);
+  }
+
+  .stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: white;
+    animation: twinkle var(--dur) ease-in-out infinite;
+    opacity: 0;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(1); }
+    50% { opacity: var(--op); transform: scale(1.5); }
+  }
+
+  .petals-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .petal {
+    position: absolute;
+    top: -20px;
+    font-size: 12px;
+    opacity: 0.6;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(-20px) rotate(0deg) translateX(0); opacity: 0.6; }
+    100% { transform: translateY(110vh) rotate(720deg) translateX(30px); opacity: 0; }
+  }
+
+  .landing-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2rem;
+    animation: fadeUp 1.2s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .big-heart {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    animation: heartbeat 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(232, 130, 154, 0.6));
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.1); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.07); }
+    56% { transform: scale(1); }
+  }
+
+  .landing-sub {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    color: var(--rose-light);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
+    animation: fadeUp 1.2s 0.3s ease both;
+  }
+
+  .landing-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    font-style: italic;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 60px rgba(232, 130, 154, 0.4);
+    animation: fadeUp 1.2s 0.5s ease both;
+  }
+
+  .landing-title span {
+    background: linear-gradient(135deg, var(--rose-light), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .landing-desc {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    margin-bottom: 0.6rem;
+    font-style: italic;
+    animation: fadeUp 1.2s 0.7s ease both;
+  }
+
+  .landing-hint {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1rem;
+    color: var(--rose);
+    margin-bottom: 2.5rem;
+    animation: fadeUp 1.2s 0.9s ease both;
+  }
+
+  .open-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--rose-deep), var(--rose));
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    box-shadow: 0 0 40px rgba(196, 86, 110, 0.5), 0 4px 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    animation: fadeUp 1.2s 1.1s ease both;
+  }
+
+  .open-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 0 60px rgba(196, 86, 110, 0.7), 0 8px 30px rgba(0,0,0,0.4);
+  }
+
+  .landing-credit {
+    position: absolute;
+    bottom: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+
+  /* ─── MAIN APP ─── */
+  #app {
+    display: none;
+    min-height: 100vh;
+    background: radial-gradient(ellipse at 20% 0%, #2d1535 0%, #1a0f1e 60%);
+  }
+
+  /* NAV */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(26, 15, 30, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(232, 130, 154, 0.15);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    padding: 0.5rem;
+  }
+
+  .nav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.6rem 1rem;
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.3s;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+
+  .nav-btn .nav-icon { font-size: 1.2rem; }
+
+  .nav-btn.active {
+    background: rgba(232, 130, 154, 0.15);
+    color: var(--rose-light);
+  }
+
+  .nav-btn:hover { color: var(--rose-light); }
+
+  /* SECTIONS */
+  .section {
+    display: none;
+    min-height: calc(100vh - 70px);
+    padding: 3rem 1.5rem;
+    max-width: 780px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .section.active {
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-style: italic;
+    text-align: center;
+    background: linear-gradient(135deg, var(--rose-light), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-sub {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    color: var(--rose);
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ─── LETTER ─── */
+  .envelope-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .envelope {
+    width: 320px;
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .envelope:hover { transform: scale(1.03); }
+
+  .envelope-body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #c4566e, #e8829a);
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(196, 86, 110, 0.4);
+  }
+
+  .envelope-flap {
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 0;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-top: 100px solid #a33d58;
+    transform-origin: top;
+    transition: transform 0.6s ease;
+    z-index: 2;
+  }
+
+  .envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+  }
+
+  .envelope-seal {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    z-index: 3;
+    transition: opacity 0.3s;
+  }
+
+  .envelope.open .envelope-seal { opacity: 0; }
+
+  .envelope-hint {
+    position: absolute;
+    bottom: 12px; width: 100%;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+  }
+
+  .letter-card {
+    display: none;
+    background: linear-gradient(145deg, rgba(61, 31, 74, 0.8), rgba(45, 21, 53, 0.9));
+    border: 1px solid rgba(232, 130, 154, 0.2);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    position: relative;
+    animation: unfold 0.6s ease forwards;
+  }
+
+  @keyframes unfold {
+    from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .letter-card::before {
+    content: '🌸';
+    position: absolute;
+    top: 1rem; right: 1.2rem;
+    font-size: 1.5rem;
+    opacity: 0.6;
+  }
+
+  .letter-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+    color: var(--rose-light);
+    margin-bottom: 1.2rem;
+  }
+
+  .letter-body {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--text-light);
+    white-space: pre-line;
+  }
+
+  .letter-sign {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    text-align: right;
+    margin-top: 1.5rem;
+  }
+
+  /* ─── SONGS ─── */
+  .songs-list { display: flex; flex-direction: column; gap: 1rem; }
+
+  .song-card {
+    background: rgba(61, 31, 74, 0.5);
+    border: 1px solid rgba(232, 130, 154, 0.15);
+    border-radius: 16px;
+    padding: 1.2rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    overflow: hidden;
+  }
+
+  .song-card:hover {
+    border-color: rgba(232, 130, 154, 0.4);
+    background: rgba(61, 31, 74, 0.7);
+    transform: translateX(4px);
+  }
+
+  .song-card.playing {
+    border-color: var(--rose);
+    box-shadow: 0 0 30px rgba(232, 130, 154, 0.2);
+  }
+
+  .song-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .song-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--rose-deep), var(--rose));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .song-info { flex: 1; }
+
+  .song-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: white;
+  }
+
+  .song-vibe {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-style: italic;
+    margin-top: 0.2rem;
+  }
+
+  .song-play-btn {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--rose-deep), var(--rose));
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s;
+  }
+
+  .song-play-btn:hover { transform: scale(1.1); }
+
+  .song-embed {
+    display: none;
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .song-embed iframe {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    display: block;
+  }
+
+  .now-playing {
+    font-family: 'Dancing Script', cursive;
+    font-size: 0.8rem;
+    color: var(--rose);
+    margin-top: 0.3rem;
+    display: none;
+  }
+
+  /* ─── MEMORIES ─── */
+  .memories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .memory-card {
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+
+  .memory-inner {
+    width: 100%; height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+  }
+
+  .memory-card.flipped .memory-inner {
+    transform: rotateY(180deg);
+  }
+
+  .memory-front, .memory-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .memory-front {
+    background: linear-gradient(145deg, rgba(196, 86, 110, 0.3), rgba(61, 31, 74, 0.6));
+    border: 1px solid rgba(232, 130, 154, 0.2);
+  }
+
+  .memory-back {
+    background: linear-gradient(145deg, rgba(212, 169, 106, 0.2), rgba(61, 31, 74, 0.8));
+    border: 1px solid rgba(212, 169, 106, 0.3);
+    transform: rotateY(180deg);
+  }
+
+  .memory-emoji { font-size: 2.5rem; margin-bottom: 0.8rem; }
+
+  .memory-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .memory-hint {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    font-style: italic;
+    margin-top: 0.4rem;
+  }
+
+  .memory-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  /* ─── WHY SPECIAL ─── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .why-card {
+    background: rgba(61, 31, 74, 0.5);
+    border: 1px solid rgba(232, 130, 154, 0.15);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .why-card:hover {
+    border-color: rgba(232, 130, 154, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(196, 86, 110, 0.2);
+  }
+
+  .why-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+
+  .why-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--rose-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .why-desc {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* ─── FINAL NOTE ─── */
+  #final {
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 70px);
+  }
+
+  .final-card {
+    background: linear-gradient(145deg, rgba(61, 31, 74, 0.8), rgba(45, 21, 53, 0.9));
+    border: 1px solid rgba(232, 130, 154, 0.25);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at center, rgba(232, 130, 154, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .final-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: var(--rose-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .final-text {
+    font-size: 1.05rem;
+    line-height: 2;
+    color: var(--text-light);
+    white-space: pre-line;
+  }
+
+  .final-sign {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    text-align: right;
+    margin-top: 2rem;
+  }
+
+  .seal-btn {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.9rem 2.5rem;
+    background: linear-gradient(135deg, var(--rose-deep), var(--rose));
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(196, 86, 110, 0.4);
+    transition: all 0.3s;
+  }
+
+  .seal-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 50px rgba(196, 86, 110, 0.6);
+  }
+
+  /* SEALED STATE */
+  .sealed-msg {
+    display: none;
+    text-align: center;
+    padding: 3rem;
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .sealed-msg .big-heart { font-size: 4rem; }
+  .sealed-msg p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    color: var(--rose-light);
+    margin-top: 1rem;
+  }
+
+  /* CONFETTI */
+  .confetti-piece {
+    position: fixed;
+    width: 8px; height: 8px;
+    top: -10px;
+    border-radius: 2px;
+    animation: confettiFall linear forwards;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  @keyframes confettiFall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+  }
+
+  /* FLOATING PETALS IN APP */
+  .app-petals {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  @media (max-width: 600px) {
+    .nav-btn { padding: 0.5rem 0.6rem; font-size: 0.65rem; }
+    .nav-btn .nav-icon { font-size: 1rem; }
+    .memories-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ LANDING PAGE ═══ -->
+<div id="landing">
+  <div class="stars" id="stars"></div>
+  <div class="petals-container" id="landingPetals"></div>
+
+  <div class="landing-content">
+    <span class="big-heart">💝</span>
+    <p class="landing-sub">Hey, something very special is here for you...</p>
+    <h1 class="landing-title">Happy Birthday,<br><span>Meri jaan ✨</span></h1>
+    <p class="landing-desc">A little piece of everything you mean to me.</p>
+    <p class="landing-hint">Tap below when you're ready 🌸</p>
+    <button class="open-btn" onclick="openApp()">Open This 💌</button>
+  </div>
+
+  <p class="landing-credit">Made with all the love left in me 🤍</p>
+</div>
+
+<!-- ═══ MAIN APP ═══ -->
+<div id="app">
+  <div class="app-petals" id="appPetals"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <button class="nav-btn active" onclick="showTab('letter', this)">
+      <span class="nav-icon">💌</span>Letter
+    </button>
+    <button class="nav-btn" onclick="showTab('songs', this)">
+      <span class="nav-icon">🎵</span>Songs
+    </button>
+    <button class="nav-btn" onclick="showTab('memories', this)">
+      <span class="nav-icon">📸</span>Memories
+    </button>
+    <button class="nav-btn" onclick="showTab('why', this)">
+      <span class="nav-icon">💕</span>You
+    </button>
+    <button class="nav-btn" onclick="showTab('final', this)">
+      <span class="nav-icon">❤️</span>Final
+    </button>
+  </nav>
+
+  <!-- ── LETTER ── -->
+  <div class="section active" id="letter">
+    <h2 class="section-title">A Birthday Letter 💌</h2>
+    <p class="section-sub">From me, to you - with everything I have</p>
+
+    <div class="envelope-wrapper">
+      <div class="envelope" id="envelope" onclick="openLetter()">
+        <div class="envelope-body">
+          <div class="envelope-flap"></div>
+          <div class="envelope-seal">💝</div>
+          <div class="envelope-hint">Click to open</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="letter-card" id="letterCard">
+      <p class="letter-name">Hey Ayesha,</p>
+      <div class="letter-body"><!-- AMAN: REPLACE THIS TEXT WITH YOUR OWN MESSAGE -->
+Today is your day, and even from a distance, I wanted to make sure you felt something warm.
+
+I'm not great at finding the right words, you always knew that about me, but I've been trying to write this for a while now. So here it is, as honest as I know how to be.
+
+Five years. Five whole years of you being a part of my world, and I still can't explain what it's like to know someone as deeply as I know you. You became part of my everyday - your voice, your laugh, the way you'd send me things at midnight just because you thought of me.
+
+You are the best thing that ever happen to me. You were there for me when I needed someone. you made me a better person. 
+
+I love you. Truly. And even now, even after everything, I find myself hoping you're okay. That you're happy. That the world is being kind to you.
+
+Today is your birthday, and you deserve every good thing this day can hold. You deserve flowers and cake and people who love you gathered around you. You deserve to feel celebrated, because you are remarkable, jaana.
+
+Smile today, a lot. It's the most beautiful thing about you.
+
+Happy Birthday. I hope today is everything you deserve.
+      </div>
+      <p class="letter-sign">Always yours, Aman ❤️</p>
+    </div>
+  </div>
+
+  <!-- ── SONGS ── -->
+  <div class="section" id="songs">
+    <h2 class="section-title">Songs That Are You 🎵</h2>
+    <p class="section-sub">Every one of these reminded me of you</p>
+
+    <div class="songs-list" id="songsList"></div>
+  </div>
+
+  <!-- ── MEMORIES ── -->
+  <div class="section" id="memories">
+    <h2 class="section-title">Some Moments 📸</h2>
+    <p class="section-sub">The kind I'll carry with me always — tap a card 🤍</p>
+
+    <div class="memories-grid" id="memoriesGrid"></div>
+  </div>
+
+  <!-- ── WHY SPECIAL ── -->
+  <div class="section" id="why">
+    <h2 class="section-title">Why You're Unforgettable 💕</h2>
+    <p class="section-sub">Especially today</p>
+
+    <div class="why-grid" id="whyGrid"></div>
+  </div>
+
+  <!-- ── FINAL NOTE ── -->
+  <div class="section" id="final">
+    <h2 class="section-title">One Last Thing ❤️</h2>
+    <p class="section-sub">Before I go</p>
+
+    <div class="final-card" id="finalCard">
+      <p class="final-name">Hey Ayesha,</p>
+      <div class="final-text"><!-- AMAN: REPLACE THIS TOO IF YOU WANT -->
+
+I love you. I truly love you, and I always will.
+
+I know I haven't been the best partner, but I always tried. I never wanted to make you sad or make you cry.
+
+I don't know what more to write, you know I'm bad at expressing my feelings haha.
+
+I just want to say thank you. Thank you for everything you did for me. Thank you for supporting me, for loving me, for being there for me. Thank you for everything, Ayesha.
+
+This is just me - making sure you know you mattered. That you still matter.
+
+Whatever life looks like for you from here, I hope it's filled with warmth, with people who truly see you, and with all the joy you quietly deserve.
+
+Go live beautifully, Ayesha 🤍
+
+Happy Birthday. 🎂</div>
+      <p class="final-sign">Always yours, Aman 🤍</p>
+      <button class="seal-btn" onclick="sealIt()">Seal It 💌</button>
+    </div>
+
+    <div class="sealed-msg" id="sealedMsg">
+      <span class="big-heart">🌸</span>
+      <p>Happy Birthday, janna 🎂</p>
+      <p style="font-size: 1rem; color: var(--text-dim); margin-top: 0.5rem; font-family: 'Cormorant Garamond', serif; font-style: italic;">Go live beautifully.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ─── DATA ───
+const songs = [
+  { title: "Perfect", artist: "Ed Sheeran", vibe: "You were perfect to me", url: "https://youtu.be/2Vv-BfVoq4g?si=FSgWvNy5LMf7giR4" },
+  { title: "Made in Japan", artist: "Buck Owens", vibe: "You in my head on repeat", url: "https://youtu.be/2g5jmS8Vx9Q?si=PXRa8saIdq2QZEET" },
+  { title: "Tum", artist: "Classic", vibe: "Just... you.", url: "https://youtu.be/PZtFYkMYyJA?si=lH7nkwFJs7dVCM_l" },
+  { title: "Uska Hi Banana", artist: "Arijit Singh", vibe: "Because I always was", url: "https://youtu.be/q-RP99S_qK0?si=NaceHBnm4-CtxRfn" },
+  { title: "Bairan", artist: "Banjaare", vibe: "You are always with me", url: "https://youtu.be/oafxkMv4xnc?si=-rTLhSSHRJRtF-nB" },
+  { title: "Rakhlo Tum Chupaake", artist: "Romantic", vibe: "Hold me somewhere safe", url: "https://youtu.be/XLZZ9dNsVac?si=uqnX2gKihm5Zgmw2" },
+  { title: "Lag Ja Gale", artist: "Lata Mangeshkar", vibe: "Some feelings never fade", url: "https://youtu.be/y2fgw1Oqz28?si=QfJQFO6yS4WCozZ6" },
+  { title: "Pal Pal Dil Ke Paas", artist: "Kishore Kumar", vibe: "Every single moment, you", url: "https://youtu.be/AMuRRXCuy-4?si=0I3mno23eCd9y3O0" },
+  { title: "Aaya Tere Dar Par", artist: "Classic", vibe: "Every door I ever came to", url: "https://youtu.be/D_ShYllfh9I?si=mkXBuWjCn7Ea1COJ" },
+  { title: "The Me Who I Lost in You", artist: "Soulful", vibe: "Some versions of us only exist together", url: "https://youtu.be/tOpg4WNli1s?si=0i3sAr_m7WysFwYH" },
+  { title: "End of Beginning", artist: "Djo", vibe: "Endings that feel like something", url: "https://youtu.be/xy3AcmW0lrQ?si=5ikJk3eAYkrbGotk" },
+];
+
+const memories = [
+  { emoji: "👀", label: "The First Meeting", text: "I never thought the first time I saw you, you'll end up being my world" },
+  { emoji: "📱", label: "Our First Call", text: "I still remember how nervous I was for our first video call. And then I saw you smile." },
+  { emoji: "✨", label: "Your Eyes", text: "I loved your eyes. Still do. They say everything you never put into words." },
+  { emoji: "😊", label: "Your Smile", text: "Your smile. God, your smile. That's the most beautiful thing in you. I love it so much." },
+  { emoji: "✉️", label: "The Hostel Letter", text: "That letter you sent me from your hostel. I still read it. Something so simple, so you." },
+  { emoji: "🎂", label: "My Birthday Surprise", text: "The surprise you gave me, I didn't see it coming. That's the thing about you. You always showed up." },
+  { emoji: "🪴", label: "Jaden, the Plant", text: "You gave me a plant and named it Jaden. You made even a little plant feel like a piece of you." },
+  { emoji: "🌙", label: "Late Night Calls", text: "The late night video calls when neither of us wanted to hang up. Those were my favourite hours." },
+];
+
+const whyCards = [
+  { icon: "💫", title: "You Show Up", desc: "Quietly, without fanfare - you always found a way to be there" },
+  { icon: "🌸", title: "Your Heart", desc: "You care in ways that feel genuinely real and unforced" },
+  { icon: "✨", title: "Your Presence", desc: "Being around you felt like breathing easier" },
+  { icon: "🌙", title: "Your Depth", desc: "There are layers to you most people never get to see. I was lucky." },
+  { icon: "🤍", title: "Just You", desc: "Honest, warm, and quietly extraordinary - just as you are" },
+  { icon: "👀", title: "I love you", desc: "I love you so so much and will always gonna love you" },
+];
+
+// ─── BUILD DOM ───
+function buildSongs() {
+  const list = document.getElementById('songsList');
+  songs.forEach((s, i) => {
+    list.innerHTML += `
+      <div class="song-card" id="song-${i}" onclick="openSong('${s.url}', ${i})">
+        <div class="song-header">
+          <div class="song-num">${i+1}</div>
+          <div class="song-info">
+            <div class="song-title">${s.title}</div>
+            <div class="song-artist" style="font-size:0.8rem;color:var(--gold);margin-top:0.1rem;">${s.artist}</div>
+            <div class="song-vibe">${s.vibe}</div>
+          </div>
+          <button class="song-play-btn">▶</button>
+        </div>
+      </div>`;
+  });
+}
+
+function buildMemories() {
+  const grid = document.getElementById('memoriesGrid');
+  memories.forEach((m, i) => {
+    grid.innerHTML += `
+      <div class="memory-card" onclick="this.classList.toggle('flipped')">
+        <div class="memory-inner">
+          <div class="memory-front">
+            <span class="memory-emoji">${m.emoji}</span>
+            <p class="memory-label">${m.label}</p>
+            <p class="memory-hint">Tap to reveal 🤍</p>
+          </div>
+          <div class="memory-back">
+            <p class="memory-text">${m.text}</p>
+          </div>
+        </div>
+      </div>`;
+  });
+}
+
+function buildWhy() {
+  const grid = document.getElementById('whyGrid');
+  whyCards.forEach(w => {
+    grid.innerHTML += `
+      <div class="why-card">
+        <span class="why-icon">${w.icon}</span>
+        <div class="why-title">${w.title}</div>
+        <div class="why-desc">${w.desc}</div>
+      </div>`;
+  });
+}
+
+// ─── LANDING ───
+function openApp() {
+  document.getElementById('landing').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  startAppPetals();
+}
+
+// ─── TABS ───
+function showTab(id, btn) {
+  document.querySelectorAll('.section').forEach(s => {
+    s.classList.remove('active');
+    s.style.display = 'none';
+  });
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  const target = document.getElementById(id);
+  target.classList.add('active');
+  target.style.display = 'block';
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─── LETTER ───
+function openLetter() {
+  const env = document.getElementById('envelope');
+  const card = document.getElementById('letterCard');
+  env.classList.add('open');
+  setTimeout(() => {
+    env.style.opacity = '0';
+    env.style.transform = 'scale(0.8)';
+    setTimeout(() => { env.style.display = 'none'; card.style.display = 'block'; }, 400);
+  }, 700);
+}
+
+// ─── SONGS ───
+function openSong(url, i) {
+  // highlight card briefly
+  document.querySelectorAll('.song-card').forEach(c => c.classList.remove('playing'));
+  document.getElementById(`song-${i}`).classList.add('playing');
+  window.open(url, '_blank');
+}
+
+// ─── FINAL / SEAL ───
+function sealIt() {
+  document.getElementById('finalCard').style.display = 'none';
+  document.getElementById('sealedMsg').style.display = 'block';
+  launchConfetti();
+}
+
+function launchConfetti() {
+  const colors = ['#e8829a','#f4b8c8','#d4a96a','#f0d5a8','#c4566e','#ffffff'];
+  for (let i = 0; i < 80; i++) {
+    setTimeout(() => {
+      const c = document.createElement('div');
+      c.className = 'confetti-piece';
+      c.style.left = Math.random() * 100 + 'vw';
+      c.style.background = colors[Math.floor(Math.random() * colors.length)];
+      c.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+      c.style.animationDelay = Math.random() * 0.5 + 's';
+      c.style.transform = `rotate(${Math.random()*360}deg)`;
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 4000);
+    }, i * 30);
+  }
+}
+
+// ─── STARS ───
+function createStars() {
+  const container = document.getElementById('stars');
+  for (let i = 0; i < 80; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    s.style.left = Math.random() * 100 + '%';
+    s.style.top = Math.random() * 100 + '%';
+    s.style.setProperty('--dur', (2 + Math.random() * 4) + 's');
+    s.style.setProperty('--op', (0.3 + Math.random() * 0.7).toString());
+    s.style.animationDelay = Math.random() * 4 + 's';
+    s.style.width = s.style.height = (1 + Math.random() * 2) + 'px';
+    container.appendChild(s);
+  }
+}
+
+// ─── PETALS ───
+function createPetals(containerId) {
+  const container = document.getElementById(containerId);
+  const petals = ['🌸','🌺','🌷','✿','❀'];
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.textContent = petals[Math.floor(Math.random() * petals.length)];
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = (5 + Math.random() * 8) + 's';
+    p.style.animationDelay = Math.random() * 8 + 's';
+    p.style.fontSize = (10 + Math.random() * 10) + 'px';
+    container.appendChild(p);
+  }
+}
+
+function startAppPetals() {
+  createPetals('appPetals');
+}
+
+// ─── INIT ───
+createStars();
+createPetals('landingPetals');
+buildSongs();
+buildMemories();
+buildWhy();
+</script>
+</body>
+</html>
